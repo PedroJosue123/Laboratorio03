@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cambio de moneda</title>
+   <link rel="stylesheet" href="css/estilo_cambio_moneda.css">
+   <script>
+      function cambiar(){
+         var opciones = document.getElementsByName("eleccion");
+         var numero = parseInt(document.getElementById("num").value)
+         for (let a =0;opciones.length;a++) {
+            if (opciones[a].checked){
+               if (numero) { 
+                  alert("Su cambio es de: " + (numero/opciones[a].value).toFixed(3));}
+               else {alert("Ingrese un monto")}
+              
+            }
+         }}
+   </script>
+
+</head>
+<body>
+   <div class="hola">
+      <h1 >Casa de cambio</h1>
+      <h3 >   Seleccionar moneda a cambiar</h3>
+      <input type= "radio" name="eleccion"  value=3.77  checked  onclick="muestraOpcion()" />Dólar  
+      <input type="radio" name="eleccion"  value=3.99  onclick="muestraOpcion()"  />Euro<br />
+      <input  class="caja" type="text" id="num"  /><br />
+      <button  class = "boton" class="caja" type="button" onclick="cambiar()">Cambiar</button>
+   </div>
+  
+
+</body>
+</html>
